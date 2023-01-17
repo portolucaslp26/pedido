@@ -12,11 +12,13 @@ function change() {
 
 let step = 0;
 const content = document.querySelector('#content');
-const txt1 = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when';
-const txt2 = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when222';
-const txt3 = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when333';
-const txt4 = 'texto 4';
-const txt5 = 'texto 5';
+const txt1 = 'Desenvolvi este pequeno sistema para lhe apresentar algumas propostas, onde você terá o livre arbítrio para decidir se aceita ou não. Preparada?';
+const txt2 = 'Quer se juntar a mim em um compromisso eterno de amor e lealdade como marido e mulher?';
+const txt3 = 'Vamos selar nossa união com um sim no altar e construir uma vida juntos?';
+const txt4 = 'Quer se tornar minha esposa e passar o resto de nossos dias juntos como parceiros?';
+const txt5 = 'Vamos compartilhar todos os altos e baixos da vida como marido e esposa?';
+const txt6 = 'Quer construir uma família (Pets e Lorenzo) juntos como marido e mulher?';
+const txt7 = 'Se você está lendo esta última mensagem, é porque você tem fé em nosso amor e no nosso futuro juntos.'
 const wrapper = document.querySelector('.wrapper');
 const progressBar = document.querySelector('#progress-bar');
 content.innerHTML = txt1;
@@ -25,14 +27,27 @@ function nextStep() {
     step ++;
     if (step == 1) {
         content.innerHTML = txt2
+        progressBar.style.width = '16%'
     } else if (step == 2) {
         content.innerHTML = txt3
+        progressBar.style.width = '32%'
     } else if (step == 3) {
         content.innerHTML = txt4
+        progressBar.style.width = '48%'
+        progressBar.classList.add('bg-success')
     } else if (step == 4) {
         content.innerHTML = txt5
-    } else if (step >= 5) {
+        progressBar.style.width = '64%'
+        progressBar.classList.add('bg-warning')
+    } else if (step == 5) {
+        content.innerHTML = txt6
+        progressBar.style.width = '80%'
+        progressBar.classList.add('bg-warning')
+    } else if (step >= 6) {
         wrapper.classList.remove('d-none');
+        progressBar.style.width = '100%'
+        progressBar.classList.add('bg-danger')
+        content.innerHTML = txt7
     }
 }
 
